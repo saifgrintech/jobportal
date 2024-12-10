@@ -93,7 +93,7 @@ const About = () => {
                 <div className="mt-5 py-4">
                  <div className="col-lg-7 col-md-9 col-12 text-center mx-auto">
                  <h4 className='text-center'>Have Question ? Get in touch!</h4>
-                 <p className="text-muted ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio aspernatur blanditiis libero dolorem, delectus obcaecati.</p>
+                 <p className="text-muted ">Have questions or need assistance? Our team is here to help you every step of the way—don’t hesitate to reach out!"</p>
                  <Link to='/contact' className='btn btn-register fs-6 px-4 py-2 rounded-3'>Contact Us</Link>
                  </div>
                  </div>

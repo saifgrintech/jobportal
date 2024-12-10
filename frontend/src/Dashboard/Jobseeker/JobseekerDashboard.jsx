@@ -11,7 +11,7 @@ const JobseekerDashboard = () => {
     <div className="main_content">
       <JobNavbar />
       <div className="container px-sm-5">
-        <h4 className=" py-4 mt-4">Welcome to the Jobseeker dashboard </h4>
+        <h4 className="text-center py-4 mt-4">Welcome to the Jobseeker dashboard </h4>
        <div className="mt-5 col-lg-4 col-11 mx-auto">
        </div>
       </div>

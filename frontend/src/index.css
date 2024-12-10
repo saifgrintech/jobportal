@@ -21,7 +21,7 @@ body{
   /* height: 70px; */
   padding: 15px 0;
   background-color: white;
-  z-index: 999 !important;
+  z-index: 9999999 !important;
   background-color: #2f5854;
 }
 li{
@@ -73,10 +73,12 @@ li{
   font-size: .95rem !important;
   background-color: #72d35a !important;
 }
+.navbar .employer .dropdown-toggle i{padding: 10px 12px; background-color: #72d35a; border-radius: 50%; font-size: 15px; color: #fff; border: 2px solid #2f5854;}
 .navbar .employer .dropdown-menu[data-bs-popper] {
-  top: 135%;
-  left: -40px;
+  top: 115%;
+  left: -75px;
 }
+.navbar .employer .dropdown-toggle::after {border: 0;}
 .btn-login{
   background-color: unset;
   border: 1px solid  #72d35a;
@@ -332,7 +334,7 @@ input[type='checkbox']{
 
 
 /*-------- FAQ Page --------------*/
- .faq_section .nav-pills .nav-link.active{background-color:unset !important; color: #72d35a !important;}
+ .faq_section .nav-pills .nav-link.active{background-color:#72d35a !important; color: #fff !important;}
  .faq_section .nav-link {color: #000 !important; text-align: start !important;}
  .faq_section .accordion-item{margin-bottom: 10px;}
  .faq_section .accordion-button:focus{box-shadow: none;}
@@ -387,7 +389,6 @@ input[type='checkbox']{
   .signup_form{margin-right: 0;}
 }
 @media screen and (max-width:600px) {
-  .employer{display: none;}
   .btn-register, .btn-login {font-size: .75rem; padding: 5px 13px; margin: 0 5px !important;}
   .navbar-brand img {
    width: 50px;}

@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../context/AuthContext';
 const Navbar = () => {
+
+    const { user, logout } = useContext(AuthContext); 
+
   return (
    <>
         <nav className="navbar navbar-expand-lg shadow-sm">
@@ -47,22 +51,45 @@ const Navbar = () => {
                 <Link to='/contact' className="nav-link " >Contact Us</Link>
                 </li>
             </ul>
-            <form className="d-flex ms-auto me-3  both_btns" role="search">
-                <Link to='/login' className="btn btn-login mx-2" type="submit"><i className="fa-solid fa-user me-1"></i>Login</Link>
-                <Link to='/register' className="btn btn-register mx-2" type="submit"><i className="fa-solid fa-user-pen me-1"></i>Register</Link>
-            </form>
-            {/* <ul className="employer p-0 m-0">
-            <li className="nav-item dropdown">
-                <Link className="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    For Employers
-                </Link>
+            
+          {user ? (
+            <ul className="employer p-0 m-0">
+              <li className="nav-item dropdown">
+                <button className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 <span className='text-capitalize me-1'>{user && user.fullName}</span> 
+                 <i className="fa-solid fa-user"></i>
+                </button>
                 <ul className="dropdown-menu">
-                    <li><Link className="dropdown-item" >Employer Login</Link></li>
-                    <li><Link className="dropdown-item" >Buy Online</Link></li>
-                    <li><Link className="dropdown-item" >Hiring Suite</Link></li>
+                  <li>
+                    <Link className="dropdown-item" 
+                     to={user && user.role === 'recruiter' ? '/dashboard/recruiter' : '/dashboard/jobseeker'}
+                    >
+                     <i className="fa-solid fa-gauge me-1"></i>Dashboard
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/profile">
+                    <i className="fa-solid fa-user me-1"></i> Profile
+                    </Link>
+                  </li>
+                  <li>
+                    <button className="dropdown-item" onClick={logout}>
+                    <i className="fa-solid fa-arrow-left me-1"></i> Logout
+                    </button>
+                  </li>
                 </ul>
-                </li>
-            </ul> */}
+              </li>
+            </ul>
+          ) : (
+            <form className="d-flex ms-auto me-3 both_btns" role="search">
+              <Link to="/register" className="btn btn-register mx-2" type="button">
+                <i className="fa-solid fa-user-pen me-1"></i>Register
+              </Link>
+              <Link to="/login" className="btn btn-login mx-2" type="button">
+                <i className="fa-solid fa-user me-1"></i>Login
+              </Link>
+            </form>
+          )}
 
             {/* </div> */}
         </div>

@@ -1,5 +1,5 @@
 import React, { useState,useRef, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Sidebar from '../Sidebar';
 import DashNav from '../Dashnav';
@@ -215,9 +215,12 @@ const EditJob = () => {
             <Sidebar />
             <div className="main_content">
                 <DashNav />
-                <div className="container">
-                    <div className="col-lg-11 mx-auto">
-                        <h4 className="py-2 mt-4">Edit Job</h4>
+                <div className="container-fluid">
+                    <div className="col-lg-12 mx-auto">
+                    <div className="d-flex align-items-center justify-content-between mt-4 py-3">
+                       <h4 className="m-0">Edit Job</h4>
+                       <Link to='/dashboard/job-listing' className="btn btn-warning btn-sm"><i className="fa-solid fa-eye me-2"></i>View List</Link>
+                       </div>
                         <div className="card border rounded-4 create_job_form">
                             <div className="card-body p-md-4">
                             {alert && (
@@ -427,7 +430,7 @@ const EditJob = () => {
                                                 </div>
                                             ))}
                                         </div>
-                                        <div className="row mb-4">
+                                        <div className="col-12 mb-4">
                                           <div className="input-group">
                                                 <input
                                                     type="text"
@@ -461,7 +464,7 @@ const EditJob = () => {
                                                 </div>
                                             ))}
                                         </div>
-                                        <div className="row mb-4">
+                                        <div className="col-12 mb-4">
                                           <div className="input-group">
                                                 <input
                                                     type="text"

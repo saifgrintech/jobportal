@@ -34,6 +34,7 @@ const Footer = () => {
                     <ul className='p-0' >
                         <li><Link to='/about'><i className="fa-solid fa-chevron-right"></i> About us</Link></li>
                         <li><Link to='/contact'><i className="fa-solid fa-chevron-right"></i> Contact us</Link></li>
+                        <li><Link to='/faqs'><i className="fa-solid fa-chevron-right"></i> FAQ's</Link></li>
                         <li><Link><i className="fa-solid fa-chevron-right"></i> Send Feedback</Link></li>
                         <li><Link><i className="fa-solid fa-chevron-right"></i> Sitemap</Link></li>
                     </ul>
@@ -43,22 +44,22 @@ const Footer = () => {
                     <ul className='p-0' >
                         <li><Link><i className="fa-solid fa-chevron-right"></i> Employer Login</Link></li>
                         <li><Link><i className="fa-solid fa-chevron-right"></i> Job Posting</Link></li>
-                        <li><Link><i className="fa-solid fa-chevron-right"></i> Access Resume Database</Link></li>
+                       
                         <li><Link><i className="fa-solid fa-chevron-right"></i> Buy Online</Link></li>
                     </ul>
                     </div>
                     <div className="col-lg-2 col-md-4 col-sm-6 ">
                     <h5 className='mt-3'>Other Links</h5>
                     <ul className='p-0' >
-                        <li><Link> <i className="fa-solid fa-chevron-right"></i> Privacy Policy</Link></li>
-                        <li><Link> <i className="fa-solid fa-chevron-right"></i> Terms & conditions</Link></li>
+                        <li><Link to='/privacy-policy'> <i className="fa-solid fa-chevron-right"></i> Privacy Policy</Link></li>
+                        <li><Link to='/terms-and-conditions'> <i className="fa-solid fa-chevron-right"></i> Terms & conditions</Link></li>
                         <li><Link> <i className="fa-solid fa-chevron-right"></i> Fraud alert</Link></li>
                         <li><Link> <i className="fa-solid fa-chevron-right"></i> Help center</Link></li>
                     </ul>
                     </div>
                 </div>
             </div>
-            <div className="d-flex justify-content-center border-top py-2">
+            <div className="d-flex justify-content-center border-top py-3">
                 <p className='m-0'>&copy; Copyright  | All Rights Reserved 2024</p>
             </div>
         </div>

@@ -54,8 +54,8 @@ const RecruiterDashboard = () => {
 
         <div className="main_content">
           <DashNav />
-          <div className="container px-sm-5">
-            <h4 className=" py-4 mt-4"> Welcome <span className="text-success">"{name}"</span> to the dashboard </h4>
+          <div className="container-fluid">
+            <h4 className="py-4 mt-4 text-center"> Welcome <span className="text-success text-uppercase ">"{name}"</span> to the dashboard </h4>
             {/* <div className="row">
               <div className="col-lg-3">
                <div className="card">

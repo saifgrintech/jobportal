@@ -6,7 +6,10 @@ export const AuthContext = createContext();
 // Create the AuthProvider component
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);  // Set loading state
+  const [loading, setLoading] = useState(true); 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth <= 992);
+
+
 
   // Check if a user is logged in based on the JWT token (for example)
   useEffect(() => {
@@ -30,8 +33,13 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
+  //ToggleSidebar
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+ };
+
   return (
-    <AuthContext.Provider value={{ user, loading, login, logout }}>
+    <AuthContext.Provider value={{ user, loading, login, logout, isSidebarOpen,setIsSidebarOpen, toggleSidebar }}>
       {children}
     </AuthContext.Provider>
   );

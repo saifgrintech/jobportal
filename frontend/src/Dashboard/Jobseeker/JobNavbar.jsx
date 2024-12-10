@@ -4,13 +4,17 @@ import { AuthContext } from '../../context/AuthContext';
 
 const JobNavbar = () => {
 
-    const { logout } = useContext(AuthContext);
+    const { logout, toggleSidebar } = useContext(AuthContext);
   
   return (
     <>
          <nav className="navbar navbar-expand-lg bg-body-tertiary px-2">
             <div className="container-fluid">         
-                <i className="fa-solid fa-bars toggle_bar " ></i>
+                <i 
+                className="fa-solid fa-bars toggle_bar " 
+                onClick={toggleSidebar}
+                style={{cursor:"pointer"}}
+                ></i>
 
                 <form className=" form-inline ms-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                     <div className="input-group me-3">

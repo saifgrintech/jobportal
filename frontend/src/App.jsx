@@ -23,6 +23,8 @@ import RecruiterDashboard from './Dashboard/Recruiter/RecruiterDashboard';
 import { AuthContext } from './context/AuthContext';  // Import AuthContext
 import ProtectedRoute from './routes/PrivateRoute';
 import JobseekerDashboard from './Dashboard/Jobseeker/JobseekerDashboard';
+import TermsAndConditions from './Pages/TermsAndConditions';
+import PrivacyPolicy from './Pages/PrivacyPolicy';
 
 const App = () => {
   const { user } = useContext(AuthContext);  // Access the current user from context
@@ -38,6 +40,8 @@ const App = () => {
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/faqs' element={<Faq />} />
+        <Route path='/terms-and-conditions' element={<TermsAndConditions />} />
+        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         <Route path='/all-job-posts' element={<AllJobPost />} />
         <Route path='/all-employers' element={<AllEmployers />} />
         <Route path='/all-categories' element={<AllCategories />} />

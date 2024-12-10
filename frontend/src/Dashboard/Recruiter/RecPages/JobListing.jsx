@@ -165,10 +165,10 @@ const JobListing = () => {
         <Sidebar />
         <div className="main_content">
           <DashNav />
-          <div className="container px-sm-5">
+          <div className="container-fluid">
           <div className="d-flex align-items-center justify-content-between mt-4 py-3">
-              <h4 className="m-0">Post a Job</h4>
-              <Link to='/dashboard/create-job' className="btn btn-success btn-sm"><i className="fa-solid fa-plus me-2"></i>Create a job</Link>
+              <h4 className="m-0">Job Listing</h4>
+              <Link to='/dashboard/create-job' className="btn btn-success btn-sm"><i className="fa-solid fa-plus me-2"></i>Post a job</Link>
            </div>
             <div className="category_listing mt-4">
               <div className="">

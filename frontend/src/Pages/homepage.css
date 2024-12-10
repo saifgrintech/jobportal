@@ -366,6 +366,18 @@
 .alert-dismissible button:active{box-shadow: none !important;}
 
 
+/* .terms_section h4 {
+  color: #2f5854;
+} */
+.terms_section li, .policy_section li {
+list-style: disc;
+}
+.terms_section li::marker {
+  color: #2f5854;
+}
+.policy_section li::marker {
+  color: #2f5854;
+}
 
 
 

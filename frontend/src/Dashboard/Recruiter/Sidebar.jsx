@@ -1,15 +1,34 @@
-import {React, useEffect} from 'react';
+import {React, useContext, useEffect} from 'react';
 import { Link } from 'react-router-dom'; 
+import { AuthContext } from '../../context/AuthContext';
 
 const Sidebar = () => {
+    const { isSidebarOpen, setIsSidebarOpen, toggleSidebar } = useContext(AuthContext);
+    useEffect(() => {
+        const updateSidebarClass = () => {
+          setIsSidebarOpen(window.innerWidth <= 992);
+        };
+    
+        // Run on window resize
+        window.addEventListener('resize', updateSidebarClass);
+    
+        // Cleanup event listener on unmount
+        return () => window.removeEventListener('resize', updateSidebarClass);
+      }, [setIsSidebarOpen]);
 
   return (
    <>
-        <div className={`left_sidebar p-3 `}>
-                <div className="d-flex justify-content-between">
-                    <Link to='/dashboard' style={{textDecoration:"none", color:"white"}}>
-                         <h4 className='mb-3'>Job Portal</h4>
+        <div className={`left_sidebar p-3 ${isSidebarOpen ? 'open' : ''}`}>
+                <div className="d-flex align-items-center justify-content-between mb-3">
+                    <Link to='/' style={{textDecoration:"none", color:"white"}}>
+                         <h4 className='m-0'>Job Portal</h4>
                     </Link>
+                    <div className='toggle_div'>
+                        <i className="fa-solid fa-xmark toggle_bar"
+                            onClick={toggleSidebar}
+                            style={{ cursor: 'pointer' }}
+                        ></i>
+                     </div>
                 </div>
                       
                   <div  className='mt-4'>

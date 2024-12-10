@@ -4,14 +4,20 @@ import { AuthContext } from '../../context/AuthContext';
 
 const DashNav = () => {
 
-    const { logout } = useContext(AuthContext);
+    const { logout, toggleSidebar  } = useContext(AuthContext);
   
   return (
     <>
          <nav className="navbar navbar-expand-lg bg-body-tertiary px-2">
             <div className="container-fluid">         
-                <i className="fa-solid fa-bars toggle_bar " ></i>
+          <div className='toggle_div'>
+            <i
+                className="fa-solid fa-bars toggle_bar"
+                onClick={toggleSidebar} // Toggle sidebar on click
+                style={{ cursor: 'pointer' }}
+            ></i>
 
+          </div>
                 <form className=" form-inline ms-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                     <div className="input-group me-3">
                         <input type="text" className="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
